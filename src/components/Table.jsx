@@ -6,7 +6,7 @@ export default function Table() {
 
   return (
     <div>
-      <table className="table is-striped is-narrow">
+      <table className="table is-striped is-narrow is-bordered">
         <thead>
           <tr>
             <th>Name</th>
