@@ -13,7 +13,6 @@ function Provider({ children }) {
       console.log(planetsData);
     };
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const contextValue = {
