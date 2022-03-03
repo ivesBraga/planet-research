@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import getPlanets from './services/StarWarsAPI';
+import React from 'react';
+import 'bulma/css/bulma.min.css';
 import './App.css';
+import Table from './components/Table';
+import Provider from './context/Provider';
 
 function App() {
-  useEffect(() => {
-    getPlanets();
-  }, []);
-
   return (
-    <span>Hello, App!</span>
+    <Provider>
+      <Table />
+    </Provider>
+
   );
 }
 
