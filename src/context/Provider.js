@@ -105,6 +105,7 @@ function Provider({ children }) {
     setSaveFilters,
     saveFiltersSetup,
     setColumnValue,
+    columnValue,
   };
 
   return (

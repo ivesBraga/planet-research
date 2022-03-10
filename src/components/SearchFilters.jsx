@@ -10,6 +10,7 @@ export default function SearchFilters() {
     setComparisonFilter,
     saveFiltersSetup,
     setColumnValue,
+    columnValue,
   } = useContext(Context);
 
   const comparisonOptions = ['maior que', 'menor que', 'igual a'];
@@ -19,7 +20,7 @@ export default function SearchFilters() {
 
       <select
         data-testid="column-filter"
-        value={ columnOptions }
+        value={ columnValue }
         onChange={ ({ target }) => setColumnValue(target.value) }
       >
         {columnOptions.map((value) => <option key={ value }>{value}</option>)}
