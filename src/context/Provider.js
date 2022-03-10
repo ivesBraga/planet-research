@@ -101,9 +101,10 @@ function Provider({ children }) {
     setColumnOptions,
     comparisonFilter,
     setComparisonFilter,
-    // saveFilters,
-    // setSaveFilters,
+    saveFilters,
+    setSaveFilters,
     saveFiltersSetup,
+    setColumnValue,
   };
 
   return (
