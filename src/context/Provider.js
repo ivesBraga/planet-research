@@ -28,6 +28,15 @@ function Provider({ children }) {
     console.log(columnOptions);
   }
 
+  const deleteFilter = (filtro) => {
+    setSaveFilters((prevState) => prevState.filter((filter) => filter === filtro));
+    setOriginalPlanetsData(planetsData);
+  };
+
+  const removeAllFilters = () => {
+    setSaveFilters([]);
+  };
+
   useEffect(() => {
     setColumnValue(columnOptions[0]);
   }, [columnOptions]);
@@ -106,6 +115,8 @@ function Provider({ children }) {
     saveFiltersSetup,
     setColumnValue,
     columnValue,
+    deleteFilter,
+    removeAllFilters,
   };
 
   return (

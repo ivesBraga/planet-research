@@ -12,6 +12,8 @@ export default function SearchFilters() {
     setColumnValue,
     columnValue,
     saveFilters,
+    deleteFilter,
+    removeAllFilters,
   } = useContext(Context);
 
   const comparisonOptions = ['maior que', 'menor que', 'igual a'];
@@ -53,17 +55,36 @@ export default function SearchFilters() {
       >
         Filtrar!
       </button>
-      {
-        saveFilters.map((filtros, i) => (
-          <div key={ i }>
-            <p>{ filtros.column }</p>
-            {' '}
-            <p>{ filtros.comparison }</p>
-            {' '}
-            <p>{ filtros.value }</p>
-          </div>
-        ))
-      }
+
+      <button
+        type="button"
+        data-testid="button-remove-filters"
+        onClick={ removeAllFilters }
+      >
+        Remover Filtros
+      </button>
+      <div data-tesdid="filter">
+        {
+          saveFilters.map((filtros, i) => (
+            <div key={ i }>
+              <span>
+                {
+                  `${filtros.column} || ${filtros.comparison} || ${filtros.value}`
+                }
+              </span>
+
+              <button
+                type="button"
+                onClick={ () => deleteFilter(filtros) }
+              >
+                X
+              </button>
+
+            </div>
+          ))
+        }
+      </div>
+
     </div>
   );
 }
