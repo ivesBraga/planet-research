@@ -13,9 +13,9 @@ function Provider({ children }) {
   const [planetSearch, setPlanetSearch] = useState('');
 
   // filtros
-  const [numberFilter, setNumberFilter] = useState(0);
-  const [columnValue, setColumnValue] = useState(['population']);
-  const [comparisonFilter, setComparisonFilter] = useState(['maior que']);
+  const [numberFilter, setNumberFilter] = useState('0');
+  const [columnValue, setColumnValue] = useState('population');
+  const [comparisonFilter, setComparisonFilter] = useState('maior que');
 
   // salvando todos os filtros num local só
 

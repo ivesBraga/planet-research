@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Context from '../context/Context';
 
 export default function SearchFilters() {
@@ -11,9 +11,14 @@ export default function SearchFilters() {
     saveFiltersSetup,
     setColumnValue,
     columnValue,
+    saveFilters,
   } = useContext(Context);
 
   const comparisonOptions = ['maior que', 'menor que', 'igual a'];
+
+  useEffect(() => {
+    console.log(saveFilters);
+  }, [saveFilters]);
 
   return (
     <div>
@@ -48,7 +53,17 @@ export default function SearchFilters() {
       >
         Filtrar!
       </button>
-
+      {
+        saveFilters.map((filtros, i) => (
+          <div key={ i }>
+            <p>{ filtros.column }</p>
+            {' '}
+            <p>{ filtros.comparison }</p>
+            {' '}
+            <p>{ filtros.value }</p>
+          </div>
+        ))
+      }
     </div>
   );
 }

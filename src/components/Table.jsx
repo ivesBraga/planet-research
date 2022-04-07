@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import Context from '../context/Context';
+import 'bulma/css/bulma.min.css';
 
 export default function Table() {
   const { planetsData } = useContext(Context);
 
   return (
     <div>
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <th>Name</th>
