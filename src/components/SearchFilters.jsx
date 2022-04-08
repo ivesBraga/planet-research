@@ -14,6 +14,7 @@ export default function SearchFilters() {
     saveFilters,
     deleteFilter,
     removeAllFilters,
+    setOrder,
   } = useContext(Context);
 
   const comparisonOptions = ['maior que', 'menor que', 'igual a'];
@@ -22,6 +23,7 @@ export default function SearchFilters() {
   ];
 
   const [selectColumnFilter, setSelectColumnFilter] = useState(originalColumnOptions[0]);
+  const [inputOrder, setInputOrder] = useState('');
 
   useEffect(() => {
     console.log(saveFilters);
@@ -78,6 +80,7 @@ export default function SearchFilters() {
           )) }
         </select>
         <label htmlFor="AscInput">
+          Ascendente
           <input
             name="AscInput"
             id="AscInput"
@@ -88,6 +91,7 @@ export default function SearchFilters() {
           />
         </label>
         <label htmlFor="DescInput">
+          Descendente
           <input
             name="DescInput"
             id="DescInput"
@@ -100,8 +104,8 @@ export default function SearchFilters() {
         </label>
         <button
           type="button"
-          onClick={ () => handleOrderState({
-            colunm: selectSortColunm, sort: inputOrder,
+          onClick={ () => setOrder({
+            colunm: selectColumnFilter, sort: inputOrder,
           }) }
           data-testid="column-sort-button"
         >

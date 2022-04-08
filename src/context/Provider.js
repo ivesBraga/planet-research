@@ -23,6 +23,8 @@ function Provider({ children }) {
   const [columnOptions, setColumnOptions] = useState(['population', 'orbital_period',
     'diameter', 'rotation_period', 'surface_water']);
 
+  const [order, setOrder] = useState({});
+
   function removeColumnValue() {
     setColumnOptions(columnOptions.filter((options) => options !== columnValue));
     console.log(columnOptions);
@@ -77,6 +79,30 @@ function Provider({ children }) {
     }
   };
 
+  const sortPlanets = () => {
+    const { colunm, sort } = order;
+
+    let planetsOrder = [];
+
+    if (order) {
+      const unknown = planetsData.filter((planet) => planet[colunm] === 'unknown');
+      const dontHaveUnknown = planetsData
+        .filter((planet) => planet[colunm] !== 'unknown');
+      const orderedPlanets = dontHaveUnknown.sort((planetA, planetB) => {
+        if (sort === 'ASC') {
+          return Number(planetA[colunm]) - Number(planetB[colunm]);
+        }
+        return Number(planetB[colunm]) - Number(planetA[colunm]);
+      });
+      planetsOrder = [...orderedPlanets, ...unknown];
+    }
+    return setPlanetsData(planetsOrder);
+  };
+
+  useEffect(() => {
+    sortPlanets();
+  }, [order]);
+
   useEffect(() => {
     planetFilter();
   }, [saveFilters]);
@@ -117,6 +143,7 @@ function Provider({ children }) {
     columnValue,
     deleteFilter,
     removeAllFilters,
+    setOrder,
   };
 
   return (
