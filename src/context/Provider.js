@@ -13,7 +13,7 @@ function Provider({ children }) {
   const [planetSearch, setPlanetSearch] = useState('');
 
   // filtros
-  const [numberFilter, setNumberFilter] = useState('0');
+  const [numberFilter, setNumberFilter] = useState(0);
   const [columnValue, setColumnValue] = useState('population');
   const [comparisonFilter, setComparisonFilter] = useState('maior que');
 
@@ -29,8 +29,8 @@ function Provider({ children }) {
   }
 
   const deleteFilter = (filtro) => {
-    setSaveFilters((prevState) => prevState.filter((filter) => filter === filtro));
-    setOriginalPlanetsData(planetsData);
+    setSaveFilters((prevState) => prevState.filter((filter) => filter !== filtro));
+    setPlanetsData(originalPlanetsData);
   };
 
   const removeAllFilters = () => {

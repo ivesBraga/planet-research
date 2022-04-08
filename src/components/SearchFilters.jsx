@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Context from '../context/Context';
 
 export default function SearchFilters() {
@@ -17,6 +17,11 @@ export default function SearchFilters() {
   } = useContext(Context);
 
   const comparisonOptions = ['maior que', 'menor que', 'igual a'];
+  const originalColumnOptions = [
+    'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water',
+  ];
+
+  const [selectColumnFilter, setSelectColumnFilter] = useState(originalColumnOptions[0]);
 
   useEffect(() => {
     console.log(saveFilters);
@@ -56,6 +61,54 @@ export default function SearchFilters() {
         Filtrar!
       </button>
 
+      <section>
+        <select
+          data-testid="column-sort"
+          value={ selectColumnFilter }
+          onChange={ ({ target }) => setSelectColumnFilter(target.value) }
+        >
+          { originalColumnOptions.map((option, index) => (
+            <option
+              value={ option }
+              key={ index }
+              id={ option }
+            >
+              { option }
+            </option>
+          )) }
+        </select>
+        <label htmlFor="AscInput">
+          <input
+            name="AscInput"
+            id="AscInput"
+            value="ASC"
+            type="radio"
+            onChange={ ({ target }) => setInputOrder(target.value) }
+            data-testid="column-sort-input-asc"
+          />
+        </label>
+        <label htmlFor="DescInput">
+          <input
+            name="DescInput"
+            id="DescInput"
+            value="DESC"
+            type="radio"
+            onChange={ ({ target }) => setInputOrder(target.value) }
+            data-testid="column-sort-input-desc"
+            checked={ inputOrder === 'DESC' }
+          />
+        </label>
+        <button
+          type="button"
+          onClick={ () => handleOrderState({
+            colunm: selectSortColunm, sort: inputOrder,
+          }) }
+          data-testid="column-sort-button"
+        >
+          Ordenar
+        </button>
+      </section>
+
       <button
         type="button"
         data-testid="button-remove-filters"
@@ -63,13 +116,16 @@ export default function SearchFilters() {
       >
         Remover Filtros
       </button>
-      <div data-tesdid="filter">
-        {
-          saveFilters.map((filtros, i) => (
-            <div key={ i }>
+
+      {
+        saveFilters.map((filtros, i) => {
+          const { column, comparison, value } = filtros;
+          return (
+            <div key={ i } data-testid="filter">
+
               <span>
                 {
-                  `${filtros.column} || ${filtros.comparison} || ${filtros.value}`
+                  `${column} || ${comparison} || ${value}`
                 }
               </span>
 
@@ -81,9 +137,9 @@ export default function SearchFilters() {
               </button>
 
             </div>
-          ))
-        }
-      </div>
+          );
+        })
+      }
 
     </div>
   );

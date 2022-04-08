@@ -381,7 +381,7 @@ describe('5 - Não utilize filtros repetidos', () => {
   });
 });
 
-describe.only('6 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens', () => {
+describe('6 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
@@ -464,7 +464,7 @@ describe.only('6 - Apague um filtro de valor numérico ao clicar no ícone de X 
   });
 });
 
-describe('7 - Ordene as colunas de forma ascendente ou descendente', () => {
+describe.only('7 - Ordene as colunas de forma ascendente ou descendente', () => {
   beforeAll(mockFetch);
   beforeEach(cleanup);
 
