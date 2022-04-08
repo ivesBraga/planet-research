@@ -82,7 +82,7 @@ export default function SearchFilters() {
         <label htmlFor="AscInput">
           Ascendente
           <input
-            name="AscInput"
+            name="ascDescSort"
             id="AscInput"
             value="ASC"
             type="radio"
@@ -93,7 +93,7 @@ export default function SearchFilters() {
         <label htmlFor="DescInput">
           Descendente
           <input
-            name="DescInput"
+            name="ascDescSort"
             id="DescInput"
             value="DESC"
             type="radio"
@@ -104,9 +104,12 @@ export default function SearchFilters() {
         </label>
         <button
           type="button"
-          onClick={ () => setOrder({
-            colunm: selectColumnFilter, sort: inputOrder,
-          }) }
+          onClick={ () => {
+            console.log('foi');
+            setOrder({
+              colunm: selectColumnFilter, sort: inputOrder,
+            });
+          } }
           data-testid="column-sort-button"
         >
           Ordenar

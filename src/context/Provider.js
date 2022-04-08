@@ -88,13 +88,13 @@ function Provider({ children }) {
       const unknown = planetsData.filter((planet) => planet[colunm] === 'unknown');
       const dontHaveUnknown = planetsData
         .filter((planet) => planet[colunm] !== 'unknown');
-      const orderedPlanets = dontHaveUnknown.sort((planetA, planetB) => {
+      const sortedPlanets = dontHaveUnknown.sort((planetA, planetB) => {
         if (sort === 'ASC') {
           return Number(planetA[colunm]) - Number(planetB[colunm]);
         }
         return Number(planetB[colunm]) - Number(planetA[colunm]);
       });
-      planetsOrder = [...orderedPlanets, ...unknown];
+      planetsOrder = [...sortedPlanets, ...unknown];
     }
     return setPlanetsData(planetsOrder);
   };
@@ -111,7 +111,17 @@ function Provider({ children }) {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPlanets();
-      setPlanetsData(data);
+      const orderedPlanets = data.sort((a, b) => {
+        const NEGATIVE_ONE = -1;
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return NEGATIVE_ONE;
+        }
+        return 0;
+      });
+      setPlanetsData(orderedPlanets);
       setOriginalPlanetsData(data);
     };
     fetchData();

@@ -28,7 +28,7 @@ export default function Table() {
         <tbody>
           {planetsData && planetsData.map((planets) => (
             <tr key={ planets.name }>
-              <td>{planets.name}</td>
+              <td data-testid="planet-name">{planets.name}</td>
               <td>{planets.rotation_period}</td>
               <td>{planets.orbital_period}</td>
               <td>{planets.diameter}</td>
