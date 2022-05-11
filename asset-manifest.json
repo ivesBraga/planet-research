@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/planet-research/static/css/main.56328471.chunk.css",
+    "main.js": "/planet-research/static/js/main.bd35f5c2.chunk.js",
+    "main.js.map": "/planet-research/static/js/main.bd35f5c2.chunk.js.map",
+    "runtime-main.js": "/planet-research/static/js/runtime-main.20a293f1.js",
+    "runtime-main.js.map": "/planet-research/static/js/runtime-main.20a293f1.js.map",
+    "static/css/2.a4e2f9ad.chunk.css": "/planet-research/static/css/2.a4e2f9ad.chunk.css",
+    "static/js/2.c41179d5.chunk.js": "/planet-research/static/js/2.c41179d5.chunk.js",
+    "static/js/2.c41179d5.chunk.js.map": "/planet-research/static/js/2.c41179d5.chunk.js.map",
+    "index.html": "/planet-research/index.html",
+    "precache-manifest.c6144067108e57bd755e89f79e552b13.js": "/planet-research/precache-manifest.c6144067108e57bd755e89f79e552b13.js",
+    "service-worker.js": "/planet-research/service-worker.js",
+    "static/css/2.a4e2f9ad.chunk.css.map": "/planet-research/static/css/2.a4e2f9ad.chunk.css.map",
+    "static/css/main.56328471.chunk.css.map": "/planet-research/static/css/main.56328471.chunk.css.map",
+    "static/js/2.c41179d5.chunk.js.LICENSE.txt": "/planet-research/static/js/2.c41179d5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20a293f1.js",
+    "static/css/2.a4e2f9ad.chunk.css",
+    "static/js/2.c41179d5.chunk.js",
+    "static/css/main.56328471.chunk.css",
+    "static/js/main.bd35f5c2.chunk.js"
+  ]
+}
