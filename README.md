@@ -12,19 +12,19 @@ Desenvolvi uma lista com filtros de planetas do universo de Star Wars usando Con
 
   
 
-Nesse projeto, você será capaz de:
+Nesse projeto, eu:
 
   
 
-* Utilizar a _Context API_ do **React** para gerenciar estado.
+* Utilizei a _Context API_ do **React** para gerenciar estado.
 
-* Utilizar o _React Hook useState_;
+* Utilizei o _React Hook useState_;
 
-* Utilizar o _React Hook useContext_;
+* Utilizei o _React Hook useContext_;
 
-* Utilizar o _React Hook useEffect_;
+* Utilizei o _React Hook useEffect_;
 
-* Criar _React Hooks_ customizados.
+* Criei _React Hooks_ customizados.
 
   
 
@@ -32,4 +32,5 @@ Nesse projeto, você será capaz de:
 
 # Para rodar
 * Ao clonar o repositório, rode o `npm install` no seu terminal.
+* Em seguida, rode o `npm start` no terminal e veja se o projeto abre.
 ---
