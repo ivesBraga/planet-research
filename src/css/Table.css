@@ -1,0 +1,13 @@
+.cabecalho-tabela {
+    background-color: #000;
+}
+
+.titulo:hover {
+    color: #fff;
+    transition-duration: 1s;
+}
+
+.tabela {
+    background-color: rgb(88, 88, 88);
+    color: rgb(226, 226, 226);
+}

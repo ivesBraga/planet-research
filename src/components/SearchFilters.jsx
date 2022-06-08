@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Context from '../context/Context';
+import '../css/SearchFilters.css';
 
 export default function SearchFilters() {
   const {
@@ -30,9 +31,10 @@ export default function SearchFilters() {
   }, [saveFilters]);
 
   return (
-    <div>
+    <div className="filtros">
 
       <select
+        className="filtro"
         data-testid="column-filter"
         value={ columnValue }
         onChange={ ({ target }) => setColumnValue(target.value) }
@@ -41,6 +43,7 @@ export default function SearchFilters() {
       </select>
 
       <select
+        className="filtro"
         data-testid="comparison-filter"
         value={ comparisonFilter }
         onChange={ ({ target }) => setComparisonFilter(target.value) }
@@ -49,6 +52,7 @@ export default function SearchFilters() {
       </select>
 
       <input
+        className="filtro"
         type="number"
         data-testid="value-filter"
         value={ numberFilter }
@@ -56,6 +60,7 @@ export default function SearchFilters() {
       />
 
       <button
+        className="botao"
         type="button"
         data-testid="button-filter"
         onClick={ saveFiltersSetup }
@@ -65,6 +70,7 @@ export default function SearchFilters() {
 
       <section>
         <select
+          className="filtro"
           data-testid="column-sort"
           value={ selectColumnFilter }
           onChange={ ({ target }) => setSelectColumnFilter(target.value) }
@@ -79,8 +85,11 @@ export default function SearchFilters() {
             </option>
           )) }
         </select>
+      </section>
+
+      <section className="teste">
         <label htmlFor="AscInput">
-          Ascendente
+          <span>Ascendente</span>
           <input
             name="ascDescSort"
             id="AscInput"
@@ -91,7 +100,7 @@ export default function SearchFilters() {
           />
         </label>
         <label htmlFor="DescInput">
-          Descendente
+          <span>Descendente</span>
           <input
             name="ascDescSort"
             id="DescInput"
@@ -102,21 +111,24 @@ export default function SearchFilters() {
             checked={ inputOrder === 'DESC' }
           />
         </label>
-        <button
-          type="button"
-          onClick={ () => {
-            console.log('foi');
-            setOrder({
-              colunm: selectColumnFilter, sort: inputOrder,
-            });
-          } }
-          data-testid="column-sort-button"
-        >
-          Ordenar
-        </button>
       </section>
 
       <button
+        className="botao"
+        type="button"
+        onClick={ () => {
+          console.log('foi');
+          setOrder({
+            colunm: selectColumnFilter, sort: inputOrder,
+          });
+        } }
+        data-testid="column-sort-button"
+      >
+        Ordenar
+      </button>
+
+      <button
+        className="botao-remover"
         type="button"
         data-testid="button-remove-filters"
         onClick={ removeAllFilters }

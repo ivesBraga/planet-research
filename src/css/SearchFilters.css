@@ -1,0 +1,73 @@
+.filtros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 25px 0;
+}
+
+.filtro {
+    border-radius: 10px;
+    border: 2px solid #222;
+    padding: 15px 10px;
+    max-width: 150px;
+    border-width: 0;
+}
+
+.filtros span {
+    padding: 10px; 
+}
+
+.teste {
+    display: flex;
+    flex-direction: column;
+    color: rgb(226, 226, 226);
+    line-height: 2rem;
+}
+
+.botao {
+    border-radius: 5px;
+    padding: 15px 30px;
+    color: rgb(226, 226, 226);
+    background-color: #69a004;
+    cursor: pointer;
+}
+
+.botao-remover {
+    display: inline-flex;
+    align-items: center;
+    background-color: #cf1a1a;
+    border-radius: 5px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,rgba(45, 35, 66, 0.15) 0 7px 13px -3px,#cf1a1a 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: rgb(226, 226, 226);
+    cursor: pointer;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px 16px;
+    position: relative;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+   }
+   
+   .botao-remover:focus {
+    box-shadow: #cf1a1a 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #cf1a1a 0 -3px 0 inset;
+   }
+   
+   .botao-remover:hover {
+    box-shadow: rgba(45, 35, 66, 0.3) 0 4px 8px, rgba(45, 35, 66, 0.2) 0 7px 13px -3px, #cf1a1a 0 -3px 0 inset;
+    transform: translateY(-2px);
+   }
+   
+   .botao-remover:active {
+    box-shadow: #cf1a1a 3px 7px inset;
+    transform: translateY(2px);
+   }

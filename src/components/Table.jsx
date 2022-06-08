@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Context from '../context/Context';
 import 'bulma/css/bulma.min.css';
+import '../css/Table.css';
 
 export default function Table() {
   const { planetsData } = useContext(Context);
@@ -9,25 +10,25 @@ export default function Table() {
     <div>
       <table className="table">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>Rotation Period</th>
-            <th>Orbital Period</th>
-            <th>Diameter</th>
-            <th>Climate</th>
-            <th>Gravity</th>
-            <th>Terrain</th>
-            <th>Surface Water</th>
-            <th>Population</th>
-            <th>Films</th>
-            <th>Created</th>
-            <th>Edited</th>
-            <th>URL</th>
+          <tr className="cabecalho-tabela">
+            <th className="titulo">Name</th>
+            <th className="titulo">Rotation Period</th>
+            <th className="titulo">Orbital Period</th>
+            <th className="titulo">Diameter</th>
+            <th className="titulo">Climate</th>
+            <th className="titulo">Gravity</th>
+            <th className="titulo">Terrain</th>
+            <th className="titulo">Surface Water</th>
+            <th className="titulo">Population</th>
+            <th className="titulo">Films</th>
+            <th className="titulo">Created</th>
+            <th className="titulo">Edited</th>
+            <th className="titulo">URL</th>
           </tr>
         </thead>
         <tbody>
           {planetsData && planetsData.map((planets) => (
-            <tr key={ planets.name }>
+            <tr key={ planets.name } className="tabela">
               <td data-testid="planet-name">{planets.name}</td>
               <td>{planets.rotation_period}</td>
               <td>{planets.orbital_period}</td>

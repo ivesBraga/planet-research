@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Context from '../context/Context';
+import '../css/SearchInput.css';
 
 export default function SearchInput() {
   const {
@@ -11,13 +12,17 @@ export default function SearchInput() {
 
   return (
     <div>
-      <input
-        placeholder="Planet Name"
-        data-testid="name-filter"
-        onChange={ ({ target }) => setPlanetSearch(target.value) }
-        value={ planetSearch }
-      />
+      <main className="header">
+        <h1>Planet Research - Star Wars</h1>
 
+        <input
+          className="planet-name-input"
+          placeholder="Search for a planet"
+          data-testid="name-filter"
+          onChange={ ({ target }) => setPlanetSearch(target.value) }
+          value={ planetSearch }
+        />
+      </main>
     </div>
   );
 }
